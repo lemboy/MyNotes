@@ -1,1 +1,1 @@
-My Redmine Install HOWTO
+My Redmine INSTALL HOWTO
