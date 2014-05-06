@@ -1,5 +1,5 @@
-#### Установка [Redmine 2.5.1](http://redmine.org/) на чистую систему (Ubuntu 14.04 LTS) с последующим размещением на Heroku
-##### Подготовка
+### Установка [Redmine 2.5.1](http://redmine.org/) на чистую систему (Ubuntu 14.04 LTS) с последующим размещением на Heroku
+#### Подготовка
 Установка git ([источник](https://help.github.com/articles/set-up-git))
 ```
 git config --global user.name "Your Name Here"
@@ -33,7 +33,7 @@ bundle install
 ```
 sudo apt-get install postgresql-9.3 pgadmin3
 ```
-##### Установка Redmine ([источник](http://www.redmine.org/projects/redmine/wiki/RedmineInstall))
+#### Установка Redmine ([источник](http://www.redmine.org/projects/redmine/wiki/RedmineInstall))
 ```
 tar xvfz redmine-2.5.1.tar.gz
 ```
@@ -101,7 +101,7 @@ bundle exec rake db:migrate RAILS_ENV=production
 ```
 bundle exec rake redmine:load_default_data RAILS_ENV=production
 ```
-##### Heroku ([источник](https://devcenter.heroku.com/articles/getting-started-with-rails3))
+#### Heroku ([источник](https://devcenter.heroku.com/articles/getting-started-with-rails3))
 Ставим Toolbelt
 ```
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
@@ -122,9 +122,30 @@ config.assets.initialize_on_precompile = false
 
 Коммитим/переименовываем .gitignore (неправильно, наверное, потом разберемся)
 
-Добавляем в Gemfile (в целях совместимости?)
+Добавляем в конец Gemfile (в целях совместимости?)
 ```
 ruby '2.0.0'
+```
+Редактирование config/database.yml
+```
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: redmine
+  pool: 5
+  password: my_password
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: redmine
+  pool: 5
+  password: my_password
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: redmine
+  pool: 5
+  password: my_password
 ```
 Добавляем в git
 ```
