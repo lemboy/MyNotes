@@ -121,7 +121,7 @@ bundle install
 ```
 config.assets.initialize_on_precompile = false
 ```
-Модифицируем Gemfile (добавляем *"gem "pg"*, коммитим секцию *"when postresql"* - будут warnings, неаккуратно, да)
+Модифицируем Gemfile (добавляем *"gem "pg"*, коммитим секцию *"when postgresql"* - будут warnings, неаккуратно, да)
 
 Коммитим/переименовываем .gitignore (неправильно, наверное, потом разберемся)
 

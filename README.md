@@ -1,4 +1,2 @@
-Common MyNotes README
-```
-Example code
-```
+Notes about my projects
+
